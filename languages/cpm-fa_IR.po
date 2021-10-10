@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Custom Payment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-10 07:09+0330\n"
-"PO-Revision-Date: 2021-10-10 07:10+0330\n"
+"POT-Creation-Date: 2021-10-10 07:25+0330\n"
+"PO-Revision-Date: 2021-10-10 07:30+0330\n"
 "Last-Translator: \n"
 "Language-Team: فارسی\n"
 "Language: fa_IR\n"
@@ -16,6 +16,18 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;esc_attr_e\n"
 "X-Loco-Version: 2.5.0; wp-5.6.1\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#. Description of the plugin
+#: cpm.php:18
+msgid "Enable users to pay a custom amount using BPM gateway"
+msgstr ""
+"به کاربران این امکان را می دهد تا مبلغ دلخواه خود را از طریق درگاه به‌پرداخت "
+"بانک ملت پرداخت کنند"
+
+#. Author of the plugin
+#: cpm.php:20
+msgid "Ameer Mousavi"
+msgstr "امیر موسوی"
 
 #: admin/class-cpm-admin.php:79
 msgid "Plugin settings page title"
@@ -112,227 +124,227 @@ msgstr "ذخیره همه تغییرات"
 msgid "Order ID: %d - Customer Mobile: %d"
 msgstr "شماره سفارش: %d - موبایل مشتری: %d"
 
-#: includes/gateways/bpm/payment.php:156
+#: includes/gateways/bpm/payment.php:162
 msgid "Transaction was successful!"
 msgstr "تراکنش موفق بود!"
 
-#: includes/gateways/bpm/payment.php:159
+#: includes/gateways/bpm/payment.php:165
 msgid "Cart number is invalid"
 msgstr "شماره کارت نامعتبر است"
 
-#: includes/gateways/bpm/payment.php:162
+#: includes/gateways/bpm/payment.php:168
 msgid "Inventory is not enough"
 msgstr "موجودی کافی نیست"
 
-#: includes/gateways/bpm/payment.php:165
+#: includes/gateways/bpm/payment.php:171
 msgid "Password is incorrect"
 msgstr "رمز نادرست است"
 
-#: includes/gateways/bpm/payment.php:168
+#: includes/gateways/bpm/payment.php:174
 msgid "Too many enter password attempt"
 msgstr "تعداد دفعات وارد کردن رمز بیش از حد مجاز است"
 
-#: includes/gateways/bpm/payment.php:171
+#: includes/gateways/bpm/payment.php:177
 msgid "Cart is invalid"
 msgstr "کارت نامعتبر است"
 
-#: includes/gateways/bpm/payment.php:174
+#: includes/gateways/bpm/payment.php:180
 msgid "Too many payment"
 msgstr "دفعات برداشت وجه بیش از حد مجاز است"
 
-#: includes/gateways/bpm/payment.php:177
+#: includes/gateways/bpm/payment.php:183
 msgid "User canceled payment"
 msgstr "کاربر از انجام تراکنش منصرف شده است"
 
-#: includes/gateways/bpm/payment.php:180
+#: includes/gateways/bpm/payment.php:186
 msgid "Cart is expired"
 msgstr "تاریخ انقضای کارت گذشته است"
 
-#: includes/gateways/bpm/payment.php:183
+#: includes/gateways/bpm/payment.php:189
 msgid "Amount is more than valid"
 msgstr "مبلغ برداشت وجه بیش از حد مجاز است"
 
-#: includes/gateways/bpm/payment.php:186
+#: includes/gateways/bpm/payment.php:192
 msgid "Receiver is invalid"
 msgstr "پذیرنده نامعتبر است"
 
-#: includes/gateways/bpm/payment.php:189
+#: includes/gateways/bpm/payment.php:195
 msgid "Security error occurred"
 msgstr "خطای امنیتی رخ داده است"
 
-#: includes/gateways/bpm/payment.php:192
+#: includes/gateways/bpm/payment.php:198
 msgid "Receiver info is invalid"
 msgstr "اطلاعات کاربری پذیرنده نامعتبر است"
 
-#: includes/gateways/bpm/payment.php:195
+#: includes/gateways/bpm/payment.php:201
 msgid "Amount is invalid"
 msgstr "مبلغ نامعتبر است"
 
-#: includes/gateways/bpm/payment.php:198
+#: includes/gateways/bpm/payment.php:204
 msgid "Answer is invalid"
 msgstr "پاسخ نامعتبر است"
 
-#: includes/gateways/bpm/payment.php:201
+#: includes/gateways/bpm/payment.php:207
 msgid "Info format is invalid"
 msgstr "فرمت اطلاعات وارد شده صحیح نمی باشد"
 
-#: includes/gateways/bpm/payment.php:204
+#: includes/gateways/bpm/payment.php:210
 msgid "Account is invalid"
 msgstr "حساب نامعتبر است"
 
-#: includes/gateways/bpm/payment.php:207
+#: includes/gateways/bpm/payment.php:213
 msgid "Systematic error"
 msgstr "خطای سیستمی"
 
-#: includes/gateways/bpm/payment.php:210
+#: includes/gateways/bpm/payment.php:216
 msgid "Date is invalid"
 msgstr "تاریخ نامعتبر است"
 
-#: includes/gateways/bpm/payment.php:213
+#: includes/gateways/bpm/payment.php:219
 msgid "Res number is duplicated"
 msgstr "شماره درخواست تکراری است"
 
-#: includes/gateways/bpm/payment.php:216
+#: includes/gateways/bpm/payment.php:222
 msgid "Sale transaction not found"
 msgstr "تراکنش Sale یافت نشد"
 
-#: includes/gateways/bpm/payment.php:219
+#: includes/gateways/bpm/payment.php:225
 msgid "Verify request already sent"
 msgstr "قبلا درخواست تایید داده شده است"
 
-#: includes/gateways/bpm/payment.php:222
+#: includes/gateways/bpm/payment.php:228
 msgid "Verify request not found"
 msgstr "درخواست تایید یافت نشد"
 
-#: includes/gateways/bpm/payment.php:225
+#: includes/gateways/bpm/payment.php:231
 msgid "Transaction is settled before"
 msgstr "تراکنش قبلا تسویه شده است"
 
-#: includes/gateways/bpm/payment.php:228
+#: includes/gateways/bpm/payment.php:234
 msgid "Transaction is not settled"
 msgstr "تراکنش تسویه نشده است"
 
-#: includes/gateways/bpm/payment.php:231
+#: includes/gateways/bpm/payment.php:237
 msgid "Settled transaction not found"
 msgstr "تراکنش تسویه یافت نشد"
 
-#: includes/gateways/bpm/payment.php:234
+#: includes/gateways/bpm/payment.php:240
 msgid "Transaction is Reversed"
 msgstr "تراکنش Reverse شده است"
 
-#: includes/gateways/bpm/payment.php:237
+#: includes/gateways/bpm/payment.php:243
 msgid "Transaction is Refunded"
 msgstr "تراکنش Refund یافت نشد"
 
-#: includes/gateways/bpm/payment.php:240
+#: includes/gateways/bpm/payment.php:246
 msgid "Transaction is duplicated"
 msgstr "تراکنش تکراری است"
 
-#: includes/gateways/bpm/payment.php:243
+#: includes/gateways/bpm/payment.php:249
 msgid "Transaction reference is not exist"
 msgstr "تراکنش مرجع موجود نیست"
 
-#: includes/gateways/bpm/payment.php:246
+#: includes/gateways/bpm/payment.php:252
 msgid "Transaction is invalid"
 msgstr "تراکنش نامعتبر است"
 
-#: includes/gateways/bpm/payment.php:249
+#: includes/gateways/bpm/payment.php:255
 msgid "Error in withdraw"
 msgstr "خطا در واریز"
 
-#: includes/gateways/bpm/payment.php:252
+#: includes/gateways/bpm/payment.php:258
 msgid "Cart creator is invalid"
 msgstr "صادر کننده کارت نامعتبر است"
 
-#: includes/gateways/bpm/payment.php:255
+#: includes/gateways/bpm/payment.php:261
 msgid "Cart creator switch error"
 msgstr "خطای سوییچ صادر کننده کارت"
 
-#: includes/gateways/bpm/payment.php:258
+#: includes/gateways/bpm/payment.php:264
 msgid "Cart creator has no response"
 msgstr "پاسخی از صادر کننده کارت دریافت نشد"
 
-#: includes/gateways/bpm/payment.php:261
+#: includes/gateways/bpm/payment.php:267
 msgid "Cart owner not permitted to do this action"
 msgstr "دارنده کارت مجاز به انجام این تراکنش نیست"
 
-#: includes/gateways/bpm/payment.php:264
+#: includes/gateways/bpm/payment.php:270
 msgid "Session expired"
 msgstr "زمان جلسه کاری به پایان رسیده است"
 
-#: includes/gateways/bpm/payment.php:267
+#: includes/gateways/bpm/payment.php:273
 msgid "Error in setting info"
 msgstr "خطا در ثبت اطلاعات"
 
-#: includes/gateways/bpm/payment.php:270
+#: includes/gateways/bpm/payment.php:276
 msgid "Payer id is no valid"
 msgstr "شناسه پرداخت کننده نامعتبر است"
 
-#: includes/gateways/bpm/payment.php:273
+#: includes/gateways/bpm/payment.php:279
 msgid "Error in defining customer"
 msgstr "اشکال در تعریف اطلاعات مشتری"
 
-#: includes/gateways/bpm/payment.php:276
+#: includes/gateways/bpm/payment.php:282
 msgid "Too many enter info attempt"
 msgstr "تعداد دفعات ورود اطلاعات از حد مجاز گذشته است"
 
-#: includes/gateways/bpm/payment.php:279
+#: includes/gateways/bpm/payment.php:285
 msgid "IP is invalid"
 msgstr "آی‌پی فروشنده نامعتبر است"
 
-#: includes/gateways/bpm/payment.php:282
+#: includes/gateways/bpm/payment.php:288
 msgid "Connection to bank failed in bpPayRequest method"
 msgstr "اتصال به بانک هنگام درخواست پرداخت برقرار نشد"
 
-#: includes/gateways/bpm/payment.php:285
+#: includes/gateways/bpm/payment.php:291
 msgid "Connection to bank failed in bpReversalRequest method"
 msgstr "اتصال به بانک هنگام برگشت پول برقرار نشد"
 
-#: includes/gateways/bpm/payment.php:288
+#: includes/gateways/bpm/payment.php:294
 msgid "Connection to bank failed in bpSettleRequest method"
 msgstr "اتصال به بانک هنگام پرداخت مبلغ به سایت برقرار نشد"
 
-#: includes/gateways/bpm/payment.php:291
+#: includes/gateways/bpm/payment.php:297
 msgid "Connection to bank failed in bpVerifyRequest method"
 msgstr "اتصال به بانک هنگام تایید تراکنش برقرار نشد"
 
-#: includes/gateways/bpm/payment.php:294
+#: includes/gateways/bpm/payment.php:300
 msgid "Soap module not found"
 msgstr "ماژول soap بر روی سرور سایت یافت نشد"
 
-#: includes/gateways/bpm/payment.php:297
+#: includes/gateways/bpm/payment.php:303
 msgid "Settle error"
 msgstr "خطای تایید پرداخت"
 
-#: includes/gateways/bpm/payment.php:300
+#: includes/gateways/bpm/payment.php:306
 msgid "Payment was failed and amount successfully reversed to customer"
 msgstr "پرداخت ناموفق بود و مبلغ پرداختی به حساب مشتری برگشت داده شد"
 
-#: includes/gateways/bpm/payment.php:303
+#: includes/gateways/bpm/payment.php:309
 msgid "Payment and reversal was failed"
 msgstr "عملیات پرداخت و بازگشت پول هر دو ناموفق بود"
 
-#: includes/gateways/bpm/payment.php:306
+#: includes/gateways/bpm/payment.php:312
 msgid "Order id does not exist"
 msgstr "شماره سفارش وجود ندارد"
 
-#: includes/gateways/bpm/payment.php:309
+#: includes/gateways/bpm/payment.php:315
 msgid "Order completed before"
 msgstr "سفارش قبلا تکمیل شده است"
 
-#: includes/gateways/bpm/payment.php:312
+#: includes/gateways/bpm/payment.php:318
 msgid "Returned date from bank is not the same as sent data."
 msgstr ""
 "داده‌های دریافت شده از طرف بانک با داده‌های ارسال شده به بانک متفاوت است و "
 "پرداخت نامعتبر است."
 
-#: includes/gateways/bpm/payment.php:315
+#: includes/gateways/bpm/payment.php:321
 msgid "Sorry! this payment method is no available now"
 msgstr ""
 "متاسفانه درگاه به پرداخت ملت در حال حاضر در دسترس نیست. لطفا روش پرداخت "
 "دیگری را انتخاب کنید"
 
-#: includes/gateways/bpm/payment.php:318
+#: includes/gateways/bpm/payment.php:324
 msgid "Unknown error"
 msgstr "خطای ناشناخته"
 
