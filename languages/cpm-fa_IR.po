@@ -1,0 +1,576 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Custom Payment\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-10 07:09+0330\n"
+"PO-Revision-Date: 2021-10-10 07:10+0330\n"
+"Last-Translator: \n"
+"Language-Team: فارسی\n"
+"Language: fa_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.3\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr_e\n"
+"X-Loco-Version: 2.5.0; wp-5.6.1\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/class-cpm-admin.php:79
+msgid "Plugin settings page title"
+msgstr "تنظیمات افزونه"
+
+#: admin/class-cpm-admin.php:79
+msgid "Custom Payment"
+msgstr "پرداخت دلخواه"
+
+#: admin/class-cpm-admin.php:80
+msgid "Transactions List"
+msgstr "لیست تراکنش‌ها"
+
+#: admin/class-cpm-admin.php:90
+msgid "Settings"
+msgstr "تنظیمات"
+
+#: admin/class-trx-list.php:24
+msgid "Fullname"
+msgstr "نام کامل"
+
+#: admin/class-trx-list.php:25 public/partials/cpm-reverse-failure-page.php:20
+#: public/partials/cpm-reverse-success-page.php:20
+#: public/partials/cpm-success-page.php:16
+#: public/partials/cpm-verification-failure-page.php:20
+msgid "Amount"
+msgstr "مبلغ"
+
+#: admin/class-trx-list.php:26
+msgid "Sale Order ID"
+msgstr "شماره یکتای پرداخت"
+
+#: admin/class-trx-list.php:27
+msgid "Date and Time"
+msgstr "تاریخ و زمان"
+
+#: admin/class-trx-list.php:28
+msgid "Transaction Status"
+msgstr "وضعیت تراکنش"
+
+#: admin/class-trx-list.php:29
+msgid "Sale Reference ID"
+msgstr "شماره مرجع تراکنش"
+
+#: admin/class-trx-list.php:72
+msgid "No Transactions avaliable."
+msgstr "هیچ تراکنشی موجود نیست."
+
+#: admin/partials/cpm-admin-display.php:20
+msgid "Custom Payment Plugin Options"
+msgstr "افزونه پرداخت دلخواه"
+
+#: admin/partials/cpm-admin-display.php:39
+#: admin/partials/cpm-admin-display.php:41
+msgid "Insert merchant ID that received from behpardakht"
+msgstr "شماره ترمینالی که از بانک دریافت کرده‌اید را وارد کنید"
+
+#: admin/partials/cpm-admin-display.php:46
+#: admin/partials/cpm-admin-display.php:48
+msgid "Enter gateway username"
+msgstr "نام کاربری درگاه را وارد کنید"
+
+#: admin/partials/cpm-admin-display.php:53
+#: admin/partials/cpm-admin-display.php:55
+msgid "Enter gateway password"
+msgstr "کلمه عبور درگاه را وارد کنید"
+
+#: admin/partials/cpm-admin-display.php:60
+#: admin/partials/cpm-admin-display.php:62
+msgid "Interest Rates"
+msgstr "سودی که به حساب غیررسمی وارد میشود"
+
+#: admin/partials/cpm-admin-display.php:67
+#: admin/partials/cpm-admin-display.php:69
+msgid "Formal Account ID"
+msgstr "شناسه حساب رسمی"
+
+#: admin/partials/cpm-admin-display.php:74
+#: admin/partials/cpm-admin-display.php:76
+msgid "Informal Account ID"
+msgstr "شناسه حساب غیررسمی"
+
+#: admin/partials/cpm-admin-display.php:81
+#: admin/partials/cpm-admin-display.php:83
+msgid "Enable Edtaj"
+msgstr "فعالسازی تجمیع"
+
+#: admin/partials/cpm-admin-display.php:89
+msgid "Save all changes"
+msgstr "ذخیره همه تغییرات"
+
+#: includes/class-helpers.php:21
+#, php-format
+msgid "Order ID: %d - Customer Mobile: %d"
+msgstr "شماره سفارش: %d - موبایل مشتری: %d"
+
+#: includes/gateways/bpm/payment.php:156
+msgid "Transaction was successful!"
+msgstr "تراکنش موفق بود!"
+
+#: includes/gateways/bpm/payment.php:159
+msgid "Cart number is invalid"
+msgstr "شماره کارت نامعتبر است"
+
+#: includes/gateways/bpm/payment.php:162
+msgid "Inventory is not enough"
+msgstr "موجودی کافی نیست"
+
+#: includes/gateways/bpm/payment.php:165
+msgid "Password is incorrect"
+msgstr "رمز نادرست است"
+
+#: includes/gateways/bpm/payment.php:168
+msgid "Too many enter password attempt"
+msgstr "تعداد دفعات وارد کردن رمز بیش از حد مجاز است"
+
+#: includes/gateways/bpm/payment.php:171
+msgid "Cart is invalid"
+msgstr "کارت نامعتبر است"
+
+#: includes/gateways/bpm/payment.php:174
+msgid "Too many payment"
+msgstr "دفعات برداشت وجه بیش از حد مجاز است"
+
+#: includes/gateways/bpm/payment.php:177
+msgid "User canceled payment"
+msgstr "کاربر از انجام تراکنش منصرف شده است"
+
+#: includes/gateways/bpm/payment.php:180
+msgid "Cart is expired"
+msgstr "تاریخ انقضای کارت گذشته است"
+
+#: includes/gateways/bpm/payment.php:183
+msgid "Amount is more than valid"
+msgstr "مبلغ برداشت وجه بیش از حد مجاز است"
+
+#: includes/gateways/bpm/payment.php:186
+msgid "Receiver is invalid"
+msgstr "پذیرنده نامعتبر است"
+
+#: includes/gateways/bpm/payment.php:189
+msgid "Security error occurred"
+msgstr "خطای امنیتی رخ داده است"
+
+#: includes/gateways/bpm/payment.php:192
+msgid "Receiver info is invalid"
+msgstr "اطلاعات کاربری پذیرنده نامعتبر است"
+
+#: includes/gateways/bpm/payment.php:195
+msgid "Amount is invalid"
+msgstr "مبلغ نامعتبر است"
+
+#: includes/gateways/bpm/payment.php:198
+msgid "Answer is invalid"
+msgstr "پاسخ نامعتبر است"
+
+#: includes/gateways/bpm/payment.php:201
+msgid "Info format is invalid"
+msgstr "فرمت اطلاعات وارد شده صحیح نمی باشد"
+
+#: includes/gateways/bpm/payment.php:204
+msgid "Account is invalid"
+msgstr "حساب نامعتبر است"
+
+#: includes/gateways/bpm/payment.php:207
+msgid "Systematic error"
+msgstr "خطای سیستمی"
+
+#: includes/gateways/bpm/payment.php:210
+msgid "Date is invalid"
+msgstr "تاریخ نامعتبر است"
+
+#: includes/gateways/bpm/payment.php:213
+msgid "Res number is duplicated"
+msgstr "شماره درخواست تکراری است"
+
+#: includes/gateways/bpm/payment.php:216
+msgid "Sale transaction not found"
+msgstr "تراکنش Sale یافت نشد"
+
+#: includes/gateways/bpm/payment.php:219
+msgid "Verify request already sent"
+msgstr "قبلا درخواست تایید داده شده است"
+
+#: includes/gateways/bpm/payment.php:222
+msgid "Verify request not found"
+msgstr "درخواست تایید یافت نشد"
+
+#: includes/gateways/bpm/payment.php:225
+msgid "Transaction is settled before"
+msgstr "تراکنش قبلا تسویه شده است"
+
+#: includes/gateways/bpm/payment.php:228
+msgid "Transaction is not settled"
+msgstr "تراکنش تسویه نشده است"
+
+#: includes/gateways/bpm/payment.php:231
+msgid "Settled transaction not found"
+msgstr "تراکنش تسویه یافت نشد"
+
+#: includes/gateways/bpm/payment.php:234
+msgid "Transaction is Reversed"
+msgstr "تراکنش Reverse شده است"
+
+#: includes/gateways/bpm/payment.php:237
+msgid "Transaction is Refunded"
+msgstr "تراکنش Refund یافت نشد"
+
+#: includes/gateways/bpm/payment.php:240
+msgid "Transaction is duplicated"
+msgstr "تراکنش تکراری است"
+
+#: includes/gateways/bpm/payment.php:243
+msgid "Transaction reference is not exist"
+msgstr "تراکنش مرجع موجود نیست"
+
+#: includes/gateways/bpm/payment.php:246
+msgid "Transaction is invalid"
+msgstr "تراکنش نامعتبر است"
+
+#: includes/gateways/bpm/payment.php:249
+msgid "Error in withdraw"
+msgstr "خطا در واریز"
+
+#: includes/gateways/bpm/payment.php:252
+msgid "Cart creator is invalid"
+msgstr "صادر کننده کارت نامعتبر است"
+
+#: includes/gateways/bpm/payment.php:255
+msgid "Cart creator switch error"
+msgstr "خطای سوییچ صادر کننده کارت"
+
+#: includes/gateways/bpm/payment.php:258
+msgid "Cart creator has no response"
+msgstr "پاسخی از صادر کننده کارت دریافت نشد"
+
+#: includes/gateways/bpm/payment.php:261
+msgid "Cart owner not permitted to do this action"
+msgstr "دارنده کارت مجاز به انجام این تراکنش نیست"
+
+#: includes/gateways/bpm/payment.php:264
+msgid "Session expired"
+msgstr "زمان جلسه کاری به پایان رسیده است"
+
+#: includes/gateways/bpm/payment.php:267
+msgid "Error in setting info"
+msgstr "خطا در ثبت اطلاعات"
+
+#: includes/gateways/bpm/payment.php:270
+msgid "Payer id is no valid"
+msgstr "شناسه پرداخت کننده نامعتبر است"
+
+#: includes/gateways/bpm/payment.php:273
+msgid "Error in defining customer"
+msgstr "اشکال در تعریف اطلاعات مشتری"
+
+#: includes/gateways/bpm/payment.php:276
+msgid "Too many enter info attempt"
+msgstr "تعداد دفعات ورود اطلاعات از حد مجاز گذشته است"
+
+#: includes/gateways/bpm/payment.php:279
+msgid "IP is invalid"
+msgstr "آی‌پی فروشنده نامعتبر است"
+
+#: includes/gateways/bpm/payment.php:282
+msgid "Connection to bank failed in bpPayRequest method"
+msgstr "اتصال به بانک هنگام درخواست پرداخت برقرار نشد"
+
+#: includes/gateways/bpm/payment.php:285
+msgid "Connection to bank failed in bpReversalRequest method"
+msgstr "اتصال به بانک هنگام برگشت پول برقرار نشد"
+
+#: includes/gateways/bpm/payment.php:288
+msgid "Connection to bank failed in bpSettleRequest method"
+msgstr "اتصال به بانک هنگام پرداخت مبلغ به سایت برقرار نشد"
+
+#: includes/gateways/bpm/payment.php:291
+msgid "Connection to bank failed in bpVerifyRequest method"
+msgstr "اتصال به بانک هنگام تایید تراکنش برقرار نشد"
+
+#: includes/gateways/bpm/payment.php:294
+msgid "Soap module not found"
+msgstr "ماژول soap بر روی سرور سایت یافت نشد"
+
+#: includes/gateways/bpm/payment.php:297
+msgid "Settle error"
+msgstr "خطای تایید پرداخت"
+
+#: includes/gateways/bpm/payment.php:300
+msgid "Payment was failed and amount successfully reversed to customer"
+msgstr "پرداخت ناموفق بود و مبلغ پرداختی به حساب مشتری برگشت داده شد"
+
+#: includes/gateways/bpm/payment.php:303
+msgid "Payment and reversal was failed"
+msgstr "عملیات پرداخت و بازگشت پول هر دو ناموفق بود"
+
+#: includes/gateways/bpm/payment.php:306
+msgid "Order id does not exist"
+msgstr "شماره سفارش وجود ندارد"
+
+#: includes/gateways/bpm/payment.php:309
+msgid "Order completed before"
+msgstr "سفارش قبلا تکمیل شده است"
+
+#: includes/gateways/bpm/payment.php:312
+msgid "Returned date from bank is not the same as sent data."
+msgstr ""
+"داده‌های دریافت شده از طرف بانک با داده‌های ارسال شده به بانک متفاوت است و "
+"پرداخت نامعتبر است."
+
+#: includes/gateways/bpm/payment.php:315
+msgid "Sorry! this payment method is no available now"
+msgstr ""
+"متاسفانه درگاه به پرداخت ملت در حال حاضر در دسترس نیست. لطفا روش پرداخت "
+"دیگری را انتخاب کنید"
+
+#: includes/gateways/bpm/payment.php:318
+msgid "Unknown error"
+msgstr "خطای ناشناخته"
+
+#: public/class-cpm-public.php:219
+msgid "<p>Transaction Not found!</p>"
+msgstr "<p>تراکنش یافت نشد</p>"
+
+#: public/class-cpm-public.php:222
+msgid "Undefined"
+msgstr "تعریف نشده"
+
+#: public/partials/cpm-public-display.php:21
+msgid "Custom Payment:"
+msgstr "پرداخت دلخواه:"
+
+#: public/partials/cpm-public-display.php:26
+msgid "Request Result"
+msgstr "نتیجه درخواست"
+
+#: public/partials/cpm-public-display.php:27
+msgid "Successful"
+msgstr "موفق"
+
+#: public/partials/cpm-public-display.php:30
+#: public/partials/cpm-public-display.php:57
+msgid "Full Name:"
+msgstr "نام کامل:"
+
+#: public/partials/cpm-public-display.php:34
+#: public/partials/cpm-public-display.php:65
+msgid "Mobile Number:"
+msgstr "شماره موبایل:"
+
+#: public/partials/cpm-public-display.php:38
+msgid "Amount:"
+msgstr "مبلغ:"
+
+#: public/partials/cpm-public-display.php:42
+msgid "Reference Number:"
+msgstr "شماره مرجع:"
+
+#: public/partials/cpm-public-display.php:49
+msgid "Confirm Request"
+msgstr "تایید درخواست"
+
+#: public/partials/cpm-public-display.php:61
+msgid "National Code:"
+msgstr "کد ملی:"
+
+#: public/partials/cpm-public-display.php:67
+msgid "This field must have at least"
+msgstr "این فیلد باید حداقل شامل"
+
+#: public/partials/cpm-public-display.php:67
+#: public/partials/cpm-public-display.php:68
+msgid "digits."
+msgstr "رقم باشد."
+
+#: public/partials/cpm-public-display.php:68
+msgid "This field must not have more than "
+msgstr "این فیلد نباید بیشتر از "
+
+#: public/partials/cpm-public-display.php:69
+#: public/partials/cpm-public-display.php:76
+msgid "This field must contain only digits."
+msgstr "در این فیلد فقط عدد باید وارد شود."
+
+#: public/partials/cpm-public-display.php:70
+msgid "The phone number must starts with 09"
+msgstr "شماره تلفن باید با ۰۹ شروع شود"
+
+#: public/partials/cpm-public-display.php:73
+msgid "Custom Amount:"
+msgstr "مبلغ دلخواه:"
+
+#: public/partials/cpm-public-display.php:79
+msgid "Submit Request"
+msgstr "ثبت درخواست"
+
+#: public/partials/cpm-reverse-failure-page.php:3
+#: public/partials/cpm-reverse-success-page.php:3
+#: public/partials/cpm-success-page.php:3
+#: public/partials/cpm-verification-failure-page.php:3
+msgid "Transaction Stauts"
+msgstr "وضعیت تراکنش"
+
+#: public/partials/cpm-reverse-failure-page.php:4
+msgid "Reverse Failed"
+msgstr "برگشت تراکنش ناموفق بود"
+
+#: public/partials/cpm-reverse-failure-page.php:7
+#: public/partials/cpm-reverse-success-page.php:7
+#: public/partials/cpm-verification-failure-page.php:7
+msgid "Reason"
+msgstr "دلیل"
+
+#: public/partials/cpm-reverse-failure-page.php:12
+#: public/partials/cpm-reverse-success-page.php:12
+#: public/partials/cpm-success-page.php:8
+#: public/partials/cpm-verification-failure-page.php:12
+msgid "Full Name"
+msgstr "نام کامل"
+
+#: public/partials/cpm-reverse-failure-page.php:16
+#: public/partials/cpm-reverse-success-page.php:16
+#: public/partials/cpm-success-page.php:12
+#: public/partials/cpm-verification-failure-page.php:16
+msgid "Transaction Reference ID"
+msgstr "شماره مرجع تراکنش"
+
+#: public/partials/cpm-reverse-failure-page.php:24
+#: public/partials/cpm-reverse-success-page.php:24
+#: public/partials/cpm-success-page.php:20
+#: public/partials/cpm-verification-failure-page.php:24
+msgid "Order ID"
+msgstr "شماره یکتای پرداخت"
+
+#: public/partials/cpm-reverse-failure-page.php:28
+#: public/partials/cpm-reverse-success-page.php:28
+#: public/partials/cpm-success-page.php:24
+#: public/partials/cpm-verification-failure-page.php:28
+msgid "Reference Number"
+msgstr "شماره مرجع"
+
+#: public/partials/cpm-reverse-success-page.php:4
+msgid "Reverse Successful"
+msgstr "عملیات برگشت موفقیت آمیز بود"
+
+#: public/partials/cpm-success-page.php:4
+msgid "Success"
+msgstr "موفق"
+
+#: public/partials/cpm-verification-failure-page.php:4
+msgid "Verification Failed"
+msgstr "تایید پرداخت ناموفق بود"
+
+#~ msgid "Bank mellat"
+#~ msgstr "بانک ملت"
+
+#~ msgid "Behpardakht"
+#~ msgstr "به‌پرداخت"
+
+#~ msgid "Behpardakht Bank mellat gateway for Woocommerce"
+#~ msgstr "درگاه به پرداخت بانک ملت برای افزونه ووکامرس"
+
+#~ msgid "Behpardakht mellat"
+#~ msgstr "به‌پرداخت ملت"
+
+#~ msgid "Behpardakht mellat gateway for Woocommerce"
+#~ msgstr "درگاه به پرداخت ملت برای ووکامرس"
+
+#~ msgid "Cart"
+#~ msgstr "سبد خرید"
+
+#~ msgid "Checkout"
+#~ msgstr "تسویه حساب"
+
+#~ msgid "Debug mode"
+#~ msgstr "حالت رفع اشکال"
+
+#~ msgid "Description"
+#~ msgstr "توضیحات"
+
+#~ msgid "Direct"
+#~ msgstr "مستقیم"
+
+#~ msgid "Enable behpardakht Payments"
+#~ msgstr "فعال‌سازی درگاه به‌پرداخت"
+
+#~ msgid "Enable/Disable"
+#~ msgstr "فعال\\غیرفعال سازی"
+
+#~ msgid "Error callback page"
+#~ msgstr "برگه بازگشت خطا"
+
+#~ msgid "Go back"
+#~ msgstr "بازگشت"
+
+#~ msgid "How to redirect to bank?"
+#~ msgstr "چگونه به بانک منتقل شود؟"
+
+#~ msgid "If active this option, gateway will only available for admins"
+#~ msgstr ""
+#~ "اگر این گزینه را فعال کنید، درگاه تنها برای مدیران سایت در دسترسی خواهد "
+#~ "بود"
+
+#~ msgid "If there was an error in payment, return to which page?"
+#~ msgstr "اگر خطایی در پرداخت وجود داشت به چه صفحه‌ای برگردد؟"
+
+#~ msgid "Logo"
+#~ msgstr "لوگو"
+
+#~ msgid "Mojtaba Darvishi"
+#~ msgstr "مجتبی درویشی"
+
+#~ msgid "Password"
+#~ msgstr "کلمه عبور"
+
+#~ msgid "Pay"
+#~ msgstr "پرداخت"
+
+#~ msgid ""
+#~ "Pay your order with shetab cart through Behpardakht Bank mellat gateway"
+#~ msgstr ""
+#~ "پرداخت امن به وسیله کلیه کارت های عضو شتاب از طریق درگاه به پرداخت ملت"
+
+#~ msgid "Payment error: "
+#~ msgstr "خطای درگاه پرداخت: "
+
+#~ msgid ""
+#~ "Payment method description that the customer will see on your checkout."
+#~ msgstr "توضیحات درگاه که در صفحه پرداخت کاربر مشاهده خواهد کرد"
+
+#~ msgid "Payment process method"
+#~ msgstr "نحوه انتقال به بانک"
+
+#, php-format
+#~ msgid ""
+#~ "Payment was successful %s Tracking Code: %s,<br /> Formal: %s,<br /> "
+#~ "Informal: %s"
+#~ msgstr ""
+#~ "پرداخت با موفقیت انجام شد. %s کد پیگیری: %s,<br /> رسمی: %s,<br /> غیر "
+#~ "رسمی: %s"
+
+#~ msgid "Terminal ID"
+#~ msgstr "شماره ترمینال"
+
+#~ msgid "Thank you for your payment. redirecting to bank..."
+#~ msgstr "از پرداخت شما متشکریم. درحال انتقال به بانک ..."
+
+#~ msgid "This controls the title which the user sees during checkout."
+#~ msgstr "عنوان درگاهی که کاربر در صفحه پرداخت مشاهده می‌کند."
+
+#~ msgid "Title"
+#~ msgstr "عنوان"
+
+#~ msgid "User submit form"
+#~ msgstr "ارسال فرم توسط کاربر (غیرمستقیم)"
+
+#~ msgid "Username"
+#~ msgstr "نام کاربری"

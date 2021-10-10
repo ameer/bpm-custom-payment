@@ -1,0 +1,482 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+.cpm-form input[type="radio"] {
+    display: none !important;
+}
+.cpm-container .cpm-op-logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cpm-container .cpm-op-logo img {
+    max-width: 64px;
+}
+.cpm-container select,
+.cpm-container input {
+    min-width: 120px;
+}
+.cpm-container input[type="submit"] {
+    color: #333;
+    margin-top: 24px;
+}
+
+.op-selector + label img {
+    cursor: pointer;
+    filter: grayscale(1);
+    transition: filter 0.3s ease-in-out;
+}
+.op-selector + label img:hover {
+    filter: grayscale(0);
+}
+.op-selector:checked + label img {
+    filter: grayscale(0);
+}
+.cpm-container input {
+    border: 1px solid silver;
+    border-radius: 4px;
+    background: white;
+    padding: 5px 10px;
+}
+
+.cpm-container .dirty {
+    border-color: #5a5;
+    background: #efe;
+}
+
+.cpm-container .dirty:focus {
+    outline-color: #8e8;
+}
+
+.cpm-container input.error {
+    border-color: red;
+    background: #fdd;
+}
+.cpm-container div.error {
+    color: #ff5050;
+    display: none;
+}
+.cpm-container div.error.show {
+    display: block;
+}
+
+.cpm-container .error:focus {
+    outline-color: #f99;
+}
+.cpm-container {
+    position: relative;
+}
+.cpm-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    background: rgb(241 241 241 / 60%);
+    top: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.cpm-container {
+    font-size: 16px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.cpm-mb-0 {
+    margin-bottom: 0;
+}
+.cpm-mb-1 {
+    margin-bottom: 4px;
+}
+
+.cpm-mb-2 {
+    margin-bottom: 8px;
+}
+.cpm-mt-2 {
+    margin-top: 8px;
+}
+
+.cpm-mb-3 {
+    margin-bottom: 12px;
+}
+
+.cpm-mb-4 {
+    margin-bottom: 16px;
+}
+.cpm-mt-4 {
+    margin-top: 16px;
+}
+
+.cpm-mb-5 {
+    margin-bottom: 20px;
+}
+
+.cpm-mb-6 {
+    margin-bottom: 24px;
+}
+
+.cpm-mb-7 {
+    margin-bottom: 28px;
+}
+
+.cpm-mb-8 {
+    margin-bottom: 32px;
+}
+.cpm-container .d-block {
+    display: block;
+}
+.cpm-container .text-center {
+    text-align: center;
+}
+.cpm-op-logo label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #c5c5c5;
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.cpm-container label {
+    cursor: pointer;
+}
+.op-selector:checked + label img {
+    filter: grayscale(0);
+}
+.op-selector:checked + label {
+    background-color: #e6e6e6;
+    box-shadow: -1px 15px 25px 0px rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: -1px 15px 25px 0px rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: -1px 15px 25px 0px rgba(0, 0, 0, 0.19);
+}
+.cpm-form input[type="radio"] {
+    display: none !important;
+}
+.cpm-container .cpm-op-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.cpm-container .cpm-op-logo span {
+    margin: 16px;
+}
+.cpm-container .cpm-op-logo img {
+    max-width: 64px;
+}
+.cpm-selected-op {
+    text-align: center;
+    border: 2px solid #c5c5c5;
+    border-radius: 15px;
+}
+.cpm-selected-op p {
+    margin: 8px;
+}
+.pk-selector {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.pk-selector div {
+    cursor: pointer;
+    text-align: center;
+    margin: 5px;
+    width: 45%;
+}
+
+.fa-price {
+    margin-right: 5px;
+}
+.cpm-pk-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.cpm-card {
+    align-items: stretch;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 10%), 0 3px 6px rgb(0 0 0 / 16%);
+    display: flex;
+    margin: 5px;
+    min-height: 250px;
+    overflow: hidden;
+    text-align: center;
+    transform: scale(0.9);
+    transition: transform 0.5s;
+    width: 45%;
+}
+.cpm-card:hover {
+    transform: translateY(-10px) scale(1);
+}
+.cpm-card.active {
+    transform: translateY(-10px) scale(1);
+}
+.cpm-card-header {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 14px 0;
+}
+.op-0 .cpm-card-header {
+    background: #54c5d0;
+}
+.op-1 .cpm-card-header {
+    background: #fc0;
+}
+.op-1 .cpm-card-header img {
+    filter: invert(1);
+}
+.op-2 .cpm-card-header {
+    background: #a5247a;
+}
+.op-3 .cpm-card-header {
+    background: #e23317;
+}
+.op-3 .cpm-card-header {
+    background: #283372;
+}
+.cpm-card-header img {
+    max-width: 64px;
+    height: auto;
+    vertical-align: middle;
+}
+.cpm-card-body {
+    padding: 0 5px;
+    font-size: 90%;
+}
+.cpm-card-footer {
+    padding-bottom: 16px;
+    position: relative;
+}
+.cpm-card-footer::after {
+    margin-right: 3px;
+    content: "ريال";
+    font-size: 14px;
+    position: absolute;
+    color: #4c4c4c;
+}
+
+.cpm-card label {
+    cursor: pointer;
+    background: #f5f5f5;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: filter 0.5s, background 0.5s;
+}
+.pks-selector:checked + label {
+    filter: grayscale(0);
+    background: #e4e4e4;
+}
+
+.pks-selector:not(checked) + label {
+    filter: grayscale(1);
+}
+.cpm-card:hover label {
+    filter: grayscale(0);
+    background: #e4e4e4;
+}
+.cpm-table tbody tr th,
+.cpm-table tbody tr td {
+    word-break: keep-all;
+}
+#cpm-confirm-form table tr:nth-child(even),
+.cpm-table tr:nth-child(even) {
+    background: #c5c5c5;
+}
+#cpm-confirm-form table,
+.cpm-table {
+    text-align: center;
+}
+.cc-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cpm-container input[type="submit"] {
+    color: #fff;
+    width: 100%;
+    max-width: 256px;
+    padding: 12px;
+    border-radius: 10px;
+    background: #5ec596;
+    border: 0;
+    transition: all 0.5s ease-in-out;
+}
+.cc-container div {
+    cursor: pointer;
+    line-height: 1.2;
+    font-family: "Vazir" !important;
+    color: #de6565;
+    max-width: 200px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #de6565;
+    background: transparent;
+    transition: all 0.5s ease-in-out;
+    opacity: 0.6;
+}
+.cc-container div:hover {
+    color: #fff;
+    background-color: #de6565 !important;
+    opacity: 1;
+}
+.cpm-container input[type="submit"]:hover {
+    background: #54af86;
+}
+.cpm-container input[type="submit"]:active {
+    background: #388864;
+    transform: translateY(2px);
+}
+.op-selector + label img {
+    cursor: pointer;
+    filter: grayscale(1);
+    transition: filter 0.3s ease-in-out;
+}
+.op-selector + label img:hover {
+    filter: grayscale(0);
+}
+
+.cpm-container input {
+    border: 1px solid silver;
+    border-radius: 4px;
+    background: white;
+    padding: 5px 10px;
+}
+input#cpm-mobile-number,
+input#cpm-custom-amount,
+.cpm-container input[type="number"] {
+    color: #111;
+    font-weight: bold;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    max-width: 320px;
+    outline: none !important;
+    text-align: center;
+    transition: border 0.3s;
+    width: 100%;
+}
+input#cpm-mobile-number:focus-within,
+input#cpm-custom-amount:focus-within,
+.cpm-container input[type="number"]:focus-within {
+    border-bottom: 2px solid #247cff;
+}
+.cpm-container .dirty {
+    border-color: #5a5;
+    background: #efe;
+}
+
+.cpm-container .dirty:focus {
+    outline-color: #8e8;
+}
+
+.cpm-container input.error {
+    border-color: red;
+    background: #fdd;
+}
+.cpm-container div.error {
+    margin-top: 5px;
+    color: #ff5050;
+    display: none;
+}
+.cpm-container div.error.show {
+    display: block;
+}
+
+.cpm-container .error:focus {
+    outline-color: #f99;
+}
+.cpm-container {
+    position: relative;
+}
+.cpm-overlay {
+    align-items: center;
+    background: rgb(241 241 241 / 60%);
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 999;
+}
+/* cpm All Form */
+.cpm-tab-container {
+    border-right: 2px solid #ccc;
+    border-left: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    padding: 0.5em 1em;
+}
+#cpm-tab-toolbar {
+    background-color: #f1f1f1;
+    border-bottom: 2px solid #ccc;
+    display: flex;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+.tab-content {
+    display: none;
+}
+span.cpm-tab label {
+    display: inline-block;
+    padding: 14px 2em;
+    transition: all 0.3s;
+    color: #111 !important;
+    text-align: center;
+}
+
+span.cpm-tab input[type="radio"] {
+    display: none;
+}
+
+span.cpm-tab label:hover {
+    background-color: #ddd;
+}
+
+.cpm-tab-selector:checked + label {
+    background: #ccc;
+}
+/* --END-- cpm All Form */
+@media (min-width: 576px) {
+    .cpm-container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .cpm-container {
+        max-width: 720px;
+    }
+    .cpm-card {
+        width: 27%;
+        margin: 15px;
+    }
+    .pk-selector input:checked + label::before {
+        content: "\2713";
+        position: absolute;
+        right: 15px;
+        top: 5px;
+        background: #fff;
+        border-radius: 50%;
+        height: 32px;
+        width: 32px;
+        font-size: 20px;
+        color: #2db174;
+        line-height: 34px;
+    }
+}
