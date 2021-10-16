@@ -25,6 +25,13 @@ var cpmApp = new Vue({
       minLength: minLength(11),
       maxLength: maxLength(11),
     },
+    nationalCode: {
+      required,
+      numeric,
+      minLength: minLength(10),
+      maxLength: maxLength(10),
+      nationalCode
+    },
     amount: {
       required,
       numeric

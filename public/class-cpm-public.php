@@ -171,7 +171,8 @@ class Cpm_Public
 				$cost_withprofit = $helpers->get_formal_amount($options['formal_rate_percent'], $data['amount']);
 				$data['additionalData'] = $helpers->get_additional_data($options['formal_account_id'], $options['informal_account_id'], $data['orderId'], $data['mobileNumber'], $cost_withprofit, $data['amount']);
 				// Temporary save order data to database.
-				set_transient($data['orderId'], [$user_id, $data['amount'], $data['mobileNumber']], 1000);
+				set_transient($data['orderId'], [$user_id, $data['amount'], $data['mobileNumber'], $data['nationalCode']], 1000);
+				update_user_meta( $user_id, 'user_national_code', $_POST['nationalCode'] ); 
 				$res = $gateway->getBankToken($data['amount'], $data['orderId'], $user_id, $data['additionalData']);
 				die(json_encode($res));
 				break;
@@ -210,7 +211,6 @@ class Cpm_Public
 	}
 	public function confirm_payment($atts)
 	{
-		error_log(print_r($_REQUEST, 1));
 		$orderInfo = get_transient($_REQUEST['SaleOrderId']);
 		// // Verifying transaction
 		// $send_sale_order_id = get_post_meta($order_id, 'behpardakht_SaleOrderId', true);

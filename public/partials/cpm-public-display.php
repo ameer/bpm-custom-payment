@@ -59,7 +59,11 @@
                 </div>
                 <div class="cpm-mb-8 text-center">
                     <label class="d-block" for="cpm-nationalCode"><?= _e('National Code:', 'cpm') ?></label>
-                    <input type="text" name="cpm[nationalCode]" id="cpm-nationalCode" v-model="$v.nationalCode.$model" :class="status($v.nationalCode)" required @keyup="validate">
+                    <input type="text" name="cpm[nationalCode]" id="cpm-nationalCode" v-model="$v.nationalCode.$model" :class="status($v.nationalCode)" required @keyup="validate" minlength="10" maxlength="10">
+                    <div class="error" :class="{show: showErrors}" v-if="!$v.nationalCode.minLength"><?= _e('This field must have at least', 'cpm') ?> {{$v.nationalCode.$params.minLength.min}} <?= _e('digits.', 'cpm') ?></div>
+                    <div class="error" :class="{show: showErrors}" v-if="!$v.nationalCode.maxLength"><?= _e('This field must not have more than ', 'cpm') ?> {{$v.nationalCode.$params.maxLength.max}} <?= _e('digits.', 'cpm') ?></div>
+                    <div class="error" :class="{show: showErrors}" v-if="!$v.nationalCode.numeric"><?= _e('This field must contain only digits.', 'cpm') ?></div>
+                    <div class="error" :class="{show: showErrors}" v-if="!$v.nationalCode.nationalCode"><?= _e('The national code is incorrect.', 'cpm') ?></div>
                 </div>
                 <div class="cpm-mb-8 text-center">
                     <label class="d-block" for="cpm-mobile-number"><?= _e('Mobile Number:', 'cpm') ?></label>
