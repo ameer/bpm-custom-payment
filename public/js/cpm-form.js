@@ -17,7 +17,6 @@ var cpmApp = new Vue({
   },
   validations: {
     fullname: { required },
-    nationalCode: { required },
     mobileNumber: {
       required,
       phone,
@@ -30,7 +29,7 @@ var cpmApp = new Vue({
       numeric,
       minLength: minLength(10),
       maxLength: maxLength(10),
-      nationalCode
+      nationalCodeChecker
     },
     amount: {
       required,
@@ -68,7 +67,9 @@ var cpmApp = new Vue({
         action: "cpm_ajax_handler",
         func: "submitPayment",
         amount: self.amount,
+        fullname: self.fullname,
         mobileNumber: self.mobileNumber,
+        nationalCode: self.nationalCode,
         _nonce: cpm._nonce,
       };
       self.loading = true;

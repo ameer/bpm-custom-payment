@@ -11,6 +11,10 @@
  * @package    Cpm
  * @subpackage Cpm/public/partials
  */
+if ( !is_user_logged_in() ) {
+    wp_redirect( wp_login_url() );
+    exit;
+}
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
@@ -63,7 +67,7 @@
                     <div class="error" :class="{show: showErrors}" v-if="!$v.nationalCode.minLength"><?= _e('This field must have at least', 'cpm') ?> {{$v.nationalCode.$params.minLength.min}} <?= _e('digits.', 'cpm') ?></div>
                     <div class="error" :class="{show: showErrors}" v-if="!$v.nationalCode.maxLength"><?= _e('This field must not have more than ', 'cpm') ?> {{$v.nationalCode.$params.maxLength.max}} <?= _e('digits.', 'cpm') ?></div>
                     <div class="error" :class="{show: showErrors}" v-if="!$v.nationalCode.numeric"><?= _e('This field must contain only digits.', 'cpm') ?></div>
-                    <div class="error" :class="{show: showErrors}" v-if="!$v.nationalCode.nationalCode"><?= _e('The national code is incorrect.', 'cpm') ?></div>
+                    <div class="error" :class="{show: showErrors}" v-if="!$v.nationalCode.nationalCodeChecker"><?= _e('The national code is incorrect.', 'cpm') ?></div>
                 </div>
                 <div class="cpm-mb-8 text-center">
                     <label class="d-block" for="cpm-mobile-number"><?= _e('Mobile Number:', 'cpm') ?></label>

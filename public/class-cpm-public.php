@@ -56,6 +56,9 @@ class Cpm_Public
 	}
 	function cpm_form_generator()
 	{
+		if (!is_user_logged_in()) {
+			return __('You need to login to access this page!', 'cpm');
+		}
 		$current_user = wp_get_current_user();
 		$options = get_option($this->plugin_name);
 		wp_enqueue_script($this->plugin_name . '-vue');
@@ -164,15 +167,16 @@ class Cpm_Public
 				$orderId = mt_rand();
 				$data = array(
 					"amount" => intval($_POST['amount']),
+					"fullname" => $_POST['fullname'],
 					"mobileNumber" => $_POST['mobileNumber'],
+					"nationalCode" => $_POST['nationalCode'],
 					"orderId" => $orderId,
 					"additionalData" => ''
 				);
 				$cost_withprofit = $helpers->get_formal_amount($options['formal_rate_percent'], $data['amount']);
 				$data['additionalData'] = $helpers->get_additional_data($options['formal_account_id'], $options['informal_account_id'], $data['orderId'], $data['mobileNumber'], $cost_withprofit, $data['amount']);
 				// Temporary save order data to database.
-				set_transient($data['orderId'], [$user_id, $data['amount'], $data['mobileNumber'], $data['nationalCode']], 1000);
-				update_user_meta( $user_id, 'user_national_code', $_POST['nationalCode'] ); 
+				set_transient($data['orderId'], [$user_id, $data['amount'], $data['mobileNumber'], $data['nationalCode'], $data['fullname']], 1000);
 				$res = $gateway->getBankToken($data['amount'], $data['orderId'], $user_id, $data['additionalData']);
 				die(json_encode($res));
 				break;
@@ -182,7 +186,7 @@ class Cpm_Public
 		}
 		die();
 	}
-	public function insert_row_to_db($saleOrderId, $trx_amount, $trx_resCode, $trx_refId, $trx_saleReferenceId, $user_id)
+	public function insert_row_to_db($saleOrderId, $trx_amount, $trx_resCode, $trx_refId, $trx_saleReferenceId, $user_id, $fullname, $user_national_code, $user_mobile_number)
 	{
 		global $wpdb;
 		date_default_timezone_set('Asia/Tehran');
@@ -190,6 +194,9 @@ class Cpm_Public
 		$table = $wpdb->prefix . 'cpm_transactions';
 		$data = array(
 			'user_id'     => $user_id,
+			'fullname' => $fullname,
+			'user_national_code' => $user_national_code,
+			'user_mobile_number' => $user_mobile_number,
 			'saleOrderId'     => $saleOrderId,
 			'trx_datetime'     => date('Y-m-d H:i:s'),
 			'trx_amount'     => $trx_amount,
@@ -198,10 +205,13 @@ class Cpm_Public
 			'trx_saleReferenceId'     => $trx_saleReferenceId,
 
 		);
-		$format = array('%d', '%d', '%s', '%d', '%s', '%s', '%s');
+		$format = array('%d', '%s', '%s', '%s', '%d', '%s', '%d', '%s', '%s', '%s');
 
-		$wpdb->insert($table, $data, $format);
-
+		// $result = $wpdb->update($table, $data, array('saleOrderId' => $saleOrderId),$format);
+		//If nothing found to update, it will try and create the record.
+		// if ($result === FALSE || $result < 1) {
+			$wpdb->insert($table, $data, $format);
+		// }
 		return $wpdb->insert_id;
 	}
 	public function make_seed()
@@ -211,6 +221,9 @@ class Cpm_Public
 	}
 	public function confirm_payment($atts)
 	{
+		if ( !is_user_logged_in() ) {
+		header("HTTP/1.1 401 Unauthorized");
+		}
 		$orderInfo = get_transient($_REQUEST['SaleOrderId']);
 		// // Verifying transaction
 		// $send_sale_order_id = get_post_meta($order_id, 'behpardakht_SaleOrderId', true);
@@ -218,12 +231,15 @@ class Cpm_Public
 		if (!$orderInfo) {
 			return __('<p>Transaction Not found!</p>', 'cpm');
 		}
-		$saleOrderId = $_REQUEST['SaleOrderId'];
-		$saleReferenceId = isset($_REQUEST['SaleReferenceId']) ? $_REQUEST['SaleReferenceId'] : __('Undefined', 'cpm');
+		$user_id = $orderInfo[0];
 		$finalAmount = isset($_REQUEST['FinalAmount']) ? $_REQUEST['FinalAmount'] : $orderInfo[1];
+		$user_mobile_number = $orderInfo[2];
+		$user_national_code = $orderInfo[3];
+		$fullname = $orderInfo[4];
+		$saleOrderId = $_REQUEST['SaleOrderId'];
+		$saleReferenceId = isset($_REQUEST['SaleReferenceId']) ? $_REQUEST['SaleReferenceId'] : 0;
 		$resCode = $_REQUEST['ResCode'];
 		$refId = $_REQUEST['RefId'];
-		$user_id = $orderInfo[0];
 		$user = get_user_by('id', $user_id);
 		$user_display_name = $user->display_name;
 		require_once plugin_dir_path(__FILE__) . '../includes/gateways/bpm/payment.php';
@@ -233,7 +249,7 @@ class Cpm_Public
 		if ($verify['ok']) {
 			$settle = $gateway->settle($saleOrderId, $saleReferenceId);
 			if ($settle['ok']) {
-				$this->insert_row_to_db($saleOrderId, $finalAmount, $resCode, $refId, $saleReferenceId, $user_id);
+				$this->insert_row_to_db($saleOrderId, $finalAmount, $resCode, $refId, $saleReferenceId, $user_id, $fullname, $user_national_code, $user_mobile_number);
 				ob_start();
 				require_once("partials/cpm-success-page.php");
 				return ob_get_clean();
@@ -242,13 +258,13 @@ class Cpm_Public
 				$reverse = $gateway->reverse($saleOrderId, $saleReferenceId);
 				if ($reverse['ok']) {
 					// Return reverse success
-					$this->insert_row_to_db($saleOrderId, $finalAmount, $resCode, $refId, $saleReferenceId, $user_id);
+					$this->insert_row_to_db($saleOrderId, $finalAmount, $resCode, $refId, $saleReferenceId, $user_id, $fullname, $user_national_code, $user_mobile_number);
 					ob_start();
 					require_once("partials/cpm-reverse-success-page.php");
 					return ob_get_clean();
 				} else {
 					// Return reverse failure
-					$this->insert_row_to_db($saleOrderId, $finalAmount, $resCode, $refId, $saleReferenceId, $user_id);
+					$this->insert_row_to_db($saleOrderId, $finalAmount, $resCode, $refId, $saleReferenceId, $user_id, $fullname, $user_national_code, $user_mobile_number);
 					ob_start();
 					require_once("partials/cpm-reverse-failure-page.php");
 					return ob_get_clean();
@@ -256,7 +272,8 @@ class Cpm_Public
 			}
 		} else {
 			// Return transaction verification failure
-			$this->insert_row_to_db($saleOrderId, $finalAmount, $resCode, $refId, $saleReferenceId, $user_id);
+			$ex_msg = Cpm_BPM::get_error_message($resCode);
+			$this->insert_row_to_db($saleOrderId, $finalAmount, $resCode, $refId, $saleReferenceId, $user_id, $fullname, $user_national_code, $user_mobile_number);
 			ob_start();
 			require_once("partials/cpm-verification-failure-page.php");
 			return ob_get_clean();

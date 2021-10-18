@@ -21,7 +21,10 @@ if (!class_exists('Cpm_Trx_Table')) :
         public function get_columns()
         {
             return array(
-                'display_name'      => wp_strip_all_tags(__('Fullname', 'cpm')),
+                'user_id'      => wp_strip_all_tags(__('User ID', 'cpm')),
+                'fullname'      => wp_strip_all_tags(__('Fullname', 'cpm')),
+                'user_national_code'      => wp_strip_all_tags(__('National Code', 'cpm')),
+                'user_mobile_number'      => wp_strip_all_tags(__('Mobile', 'cpm')),
                 'trx_amount'      => wp_strip_all_tags(__('Amount', 'cpm')),
                 'saleOrderId'   => wp_strip_all_tags(__('Sale Order ID', 'cpm')),
                 'trx_datetime'   => wp_strip_all_tags(__('Date and Time', 'cpm')),
@@ -38,7 +41,7 @@ if (!class_exists('Cpm_Trx_Table')) :
             $columns  = $this->get_columns();
             $hidden   = array();
             $sortable = array();
-            $primary  = 'display_name';
+            $primary  = 'user_id';
             $this->_column_headers = array($columns, $hidden, $sortable, $primary);
         }
 
@@ -51,8 +54,14 @@ if (!class_exists('Cpm_Trx_Table')) :
         protected function column_default($item, $column_name)
         {
             switch ($column_name) {
-                case 'display_name':
-                    return esc_html($item['display_name']);
+                case 'user_id':
+                    return esc_html($item['user_id']);
+                case 'fullname':
+                    return esc_html($item['fullname']);
+                case 'user_national_code':
+                    return esc_html($item['user_national_code']);
+                case 'user_mobile_number':
+                    return esc_html($item['user_mobile_number']);
                 case 'trx_amount':
                     return esc_html($item['trx_amount']);
                 case 'saleOrderId':
@@ -66,6 +75,11 @@ if (!class_exists('Cpm_Trx_Table')) :
                 default:
                     return 'Unknown';
             }
+        }
+        protected function column_user_id($item){
+            $user_id = $item['user_id'];
+            $url = get_admin_url().'user-edit.php?user_id='.$user_id;
+            return "<a href='$url' target='_blank'>$user_id</a>";
         }
         public function no_items()
         {

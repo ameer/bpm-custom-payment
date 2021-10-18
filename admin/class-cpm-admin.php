@@ -212,8 +212,7 @@ class Cpm_Admin
 		// AND {$wpdb->usermeta}.meta_key='custom_status' 
 		// AND {$wpdb->usermeta}.meta_value=0
 		// INNER JOIN {$wpdb->usermeta} ON {$wpdb->users}.ID= {$wpdb->usermeta}.user_id
-		$sql = "SELECT * FROM `" . $table . "`AS trx INNER JOIN $wpdb->users AS u ON trx.user_id = u.ID INNER JOIN $wpdb->usermeta AS um ON trx.user_id = um.user_id AND um.meta_key = 'nickname'";
-
+		$sql = "SELECT * FROM `" . $table . "`AS trx";
 		return $wpdb->get_results($sql, ARRAY_A);
 	}
 }

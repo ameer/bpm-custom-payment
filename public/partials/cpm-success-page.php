@@ -1,3 +1,9 @@
+<?php
+if ( !is_user_logged_in() ) {
+    wp_redirect( wp_login_url() );
+    exit;
+}
+?>
 <table class="cpm-table">
     <tr>
         <th><?= _e('Transaction Stauts', 'cpm') ?></th>
@@ -6,7 +12,7 @@
     <tr>
         <!-- REMEMBER USER NAME AND USER INFO -->
         <th><?= _e('Full Name', 'cpm') ?></th>
-        <td><?php echo $user_display_name ?></td>
+        <td><?php echo $fullname ?></td>
     </tr>
     <tr>
         <th><?= _e('Transaction Reference ID', 'cpm') ?></th>

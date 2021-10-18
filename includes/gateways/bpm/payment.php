@@ -56,7 +56,7 @@ class Cpm_BPM
                 $result        = explode(',', $response->return);
                 $response_code = $result['0'];
                 $RefId         = $result['1'];
-                return ['ok' => true, 'url' => $this->post_url, 'RefId' => $RefId, 'orderId' => $order_id];
+                return ['ok' => true, 'url' => $this->post_url, 'RefId' => $RefId, 'orderId' => $order_id, 'response_code' => $response_code];
             } else {
                 $err_msg = $this->get_error_message($response->return);
                 return ['ok' => false, 'msg' => $err_msg];
@@ -83,12 +83,11 @@ class Cpm_BPM
             );
             $soap_client = new soapclient($this->wsdl_url);
             $verify      = $soap_client->bpVerifyRequest($parameters);
-
             // Transaction verified
             if ($verify->return == 0) {
                 return ['ok' => true, 'msg' => 'Verification was successful.'];
             } else {
-                $error_message = $this->get_error_message($verify);
+                $error_message = $this->get_error_message($verify->return);
                 return ['ok' => false, 'msg' => $error_message];
             }
         } catch (Exception $e) {
