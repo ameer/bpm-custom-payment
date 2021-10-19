@@ -38,7 +38,7 @@ var cpmApp = new Vue({
   },
   computed: {
     amountInFa() {
-      return (this.amount).num2persian() + " ریال"
+      return (this.amount).num2persian() + " تومان"
     }
   },
   methods: {

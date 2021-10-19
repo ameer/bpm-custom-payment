@@ -1,9 +1,3 @@
-<?php
-if ( !is_user_logged_in() ) {
-    auth_redirect();
-    exit;
-}
-?>
 <table class="cpm-table">
     <tr>
         <th><?= _e('Transaction Stauts', 'cpm') ?></th>
@@ -23,8 +17,8 @@ if ( !is_user_logged_in() ) {
         <td><?php echo $refId ?></td>
     </tr>
     <tr>
-        <th><?= _e('Amount', 'cpm') ?></th>
-        <td><?php echo $finalAmount; ?></td>
+        <th><?= _e('Amount (IRT)', 'cpm') ?></th>
+        <td><?php echo number_format($finalAmount, 0, ',', ','); ?></td>
     </tr>
     <tr>
         <th><?= _e('Order ID', 'cpm') ?></th>

@@ -166,7 +166,7 @@ class Cpm_Public
 				mt_srand($this->make_seed());
 				$orderId = mt_rand();
 				$data = array(
-					"amount" => intval($_POST['amount']),
+					"amount" => intval($_POST['amount']) * 10,
 					"fullname" => $_POST['fullname'],
 					"mobileNumber" => $_POST['mobileNumber'],
 					"nationalCode" => $_POST['nationalCode'],
@@ -212,7 +212,12 @@ class Cpm_Public
 		// if ($result === FALSE || $result < 1) {
 			$wpdb->insert($table, $data, $format);
 		// }
-		return $wpdb->insert_id;
+		$result = $wpdb->insert_id;
+		if($result != false){
+			$newTrxCount = get_option($this->plugin_name.'-newTrxCount');
+		update_option($this->plugin_name.'-newTrxCount', intval($newTrxCount) + 1);
+		}
+		return $result;
 	}
 	public function make_seed()
 	{
@@ -221,9 +226,6 @@ class Cpm_Public
 	}
 	public function confirm_payment($atts)
 	{
-		if ( !is_user_logged_in() ) {
-		header("HTTP/1.1 401 Unauthorized");
-		}
 		$orderInfo = get_transient($_REQUEST['SaleOrderId']);
 		// // Verifying transaction
 		// $send_sale_order_id = get_post_meta($order_id, 'behpardakht_SaleOrderId', true);
@@ -232,7 +234,7 @@ class Cpm_Public
 			return __('<p>Transaction Not found!</p>', 'cpm');
 		}
 		$user_id = $orderInfo[0];
-		$finalAmount = isset($_REQUEST['FinalAmount']) ? $_REQUEST['FinalAmount'] : $orderInfo[1];
+		$finalAmount = isset($_REQUEST['FinalAmount']) ? intval($_REQUEST['FinalAmount']) / 10 : $orderInfo[1] / 10;
 		$user_mobile_number = $orderInfo[2];
 		$user_national_code = $orderInfo[3];
 		$fullname = $orderInfo[4];

@@ -25,7 +25,7 @@ if (!class_exists('Cpm_Trx_Table')) :
                 'fullname'      => wp_strip_all_tags(__('Fullname', 'cpm')),
                 'user_national_code'      => wp_strip_all_tags(__('National Code', 'cpm')),
                 'user_mobile_number'      => wp_strip_all_tags(__('Mobile', 'cpm')),
-                'trx_amount'      => wp_strip_all_tags(__('Amount', 'cpm')),
+                'trx_amount'      => wp_strip_all_tags(__('Amount (IRT)', 'cpm')),
                 'saleOrderId'   => wp_strip_all_tags(__('Sale Order ID', 'cpm')),
                 'trx_datetime'   => wp_strip_all_tags(__('Date and Time', 'cpm')),
                 'trx_resCode'   => wp_strip_all_tags(__('Transaction Status', 'cpm')),
@@ -63,7 +63,7 @@ if (!class_exists('Cpm_Trx_Table')) :
                 case 'user_mobile_number':
                     return esc_html($item['user_mobile_number']);
                 case 'trx_amount':
-                    return esc_html($item['trx_amount']);
+                    return esc_html(number_format($item['trx_amount'], 0, ',', ','));
                 case 'saleOrderId':
                     return esc_html($item['saleOrderId']);
                 case 'trx_datetime':

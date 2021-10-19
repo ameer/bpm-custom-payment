@@ -11,9 +11,8 @@
  * @package    Cpm
  * @subpackage Cpm/public/partials
  */
-if ( !is_user_logged_in() ) {
-    wp_redirect( wp_login_url() );
-    exit;
+if (!is_user_logged_in()) {
+    return __('You need to login to access this page!', 'cpm');
 }
 ?>
 
@@ -40,7 +39,7 @@ if ( !is_user_logged_in() ) {
             </tr>
             <tr>
                 <th><?= _e('Amount:', 'cpm') ?></th>
-                <td>{{amount}}</td>
+                <td>{{Intl.NumberFormat('fa-IR').format(amount)}}</td>
             </tr>
             <tr>
                 <th><?= _e('Reference Number:', 'cpm') ?> </th>

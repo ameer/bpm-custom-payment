@@ -103,6 +103,7 @@ class Cpm_Admin
 	public function display_trx_list_page()
 	{
 		require_once('class-trx-list.php');
+		update_option($this->plugin_name.'-newTrxCount', 0);
 		$table = new Cpm_Trx_Table();
 		$data = $this->get_rows_from_db_as_associative_array();
 		$table->items = $data;
@@ -203,6 +204,22 @@ class Cpm_Admin
 
 		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/cpm-admin.js', array('jquery'), $this->version, false);
 	}
+
+	
+
+	public function add_notification_badge( $menu ) 
+	{
+		global $menu;
+		$newTrxCount = get_option($this->plugin_name.'-newTrxCount');
+		foreach ( $menu as $key => $value ) {
+            if ( $menu[$key][2] == $this->plugin_name && intval($newTrxCount) > 0 ) {
+                $menu[$key][0] .= ' <span class="update-plugins count-2"><span class="update-count">' . $newTrxCount . '</span></span>';
+                return;
+            }
+        }
+		return $menu;
+	}
+	
 	public function get_rows_from_db_as_associative_array()
 	{
 		global $wpdb;
@@ -212,7 +229,7 @@ class Cpm_Admin
 		// AND {$wpdb->usermeta}.meta_key='custom_status' 
 		// AND {$wpdb->usermeta}.meta_value=0
 		// INNER JOIN {$wpdb->usermeta} ON {$wpdb->users}.ID= {$wpdb->usermeta}.user_id
-		$sql = "SELECT * FROM `" . $table . "`AS trx";
+		$sql = "SELECT * FROM `" . $table . "` ORDER BY id DESC";
 		return $wpdb->get_results($sql, ARRAY_A);
 	}
 }
